@@ -1,6 +1,7 @@
 package com.inusualsoft.point_of_sale.config
 
 val SIGN_UP_URL = "/api/user/sign-up"
+val LOG_IN_URL = "/login"
 val SECRET = "SecretKeyToGenJWTs"
 val TOKEN_PREFIX = "Bearer "
 val HEADER_STRING = "Authorization"
