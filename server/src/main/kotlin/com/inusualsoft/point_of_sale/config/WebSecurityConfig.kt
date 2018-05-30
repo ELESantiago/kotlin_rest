@@ -23,7 +23,10 @@ open class WebSecurityConfig(val userDetailsService: UserDetailsService) : WebSe
     override fun configure(http: HttpSecurity) {
         http.csrf().disable().authorizeRequests()
                 .antMatchers(HttpMethod.POST, SIGN_UP_URL).permitAll()
+                .antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
+                .and()
+                .formLogin().loginProcessingUrl("/api/login")
                 .and()
                 .addFilter(JWTAuthenticationFilter(authenticationManager()))
                 .addFilter(JWTAuthorizationFilter(authenticationManager()))

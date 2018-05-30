@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<div>
+  <mat-form-field>
+    <input matInput placeholder="Usuario" 
+      [(ngModel)]="credentials.username" name="username" #username="ngModel">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input type="password" matInput placeholder="Contraseña"
+      [(ngModel)]="credentials.password" name="password" #password="ngModel">
+  </mat-form-field>
+
+  <button mat-button (click)="login()">Click me!</button>
+</div>
